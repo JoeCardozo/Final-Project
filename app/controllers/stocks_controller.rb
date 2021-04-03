@@ -8,6 +8,7 @@ class StocksController < ApplicationController
     def index
         @alphvantagekey = "CVNQRSCEWDQL2YVF"
         @client = Alphavantage::Client.new key: @alphavantagekey
+        @newsapi = News.new("3651a3e5ac674c158be991a8076cf34a")  
         @stocks = Stock.all
         
 

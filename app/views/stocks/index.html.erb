@@ -18,4 +18,25 @@
 
 <% end %> 
 
-test
+</div>
+
+<h2 class="text-white">Latest News<h2>
+
+<% @all_articles = @newsapi.get_everything(q: "stock market" ,sources: 'bbc-news,the-verge',domains: 'bbc.co.uk,techcrunch.com',from: '2021-03-30',to: '2021-04-1',language: 'en',sortBy: 'relevancy', page: 1)%>
+
+<div>
+<%= @all_articles.first.title %>
+<%= link_to "click here for more", @all_articles.first.url %>
+</div>
+<div>
+<%= @all_articles.second.title %>
+<%= link_to "click here for more", @all_articles.second.url %>
+</div>
+<div>
+<%= @all_articles.third.title %>
+<%= link_to "click here for more", @all_articles.third.url %>
+</div>
+<div>
+<%= @all_articles.fourth.title %>
+<%= link_to "click here for more", @all_articles.fourth.url %>
+</div>

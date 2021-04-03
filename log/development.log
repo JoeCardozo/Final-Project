@@ -4646,3 +4646,125 @@ Processing by StocksController#show as HTML
 Completed 200 OK in 482ms (Views: 479.7ms | ActiveRecord: 0.2ms | Allocations: 7067)
 
 
+Started GET "/" for ::1 at 2021-04-02 23:39:27 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/josephcardozo/.rvm/gems/ruby-3.0.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/josephcardozo/.rvm/gems/ruby-3.0.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.7ms | Allocations: 382)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 3159)
+
+
+Started GET "/stocks" for ::1 at 2021-04-02 23:39:32 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:7
+  Rendered stocks/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3570)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 10927)
+Completed 200 OK in 46ms (Views: 33.1ms | ActiveRecord: 0.9ms | Allocations: 12959)
+
+
+Started GET "/stocks/1" for ::1 at 2021-04-02 23:39:34 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 408.9ms | Allocations: 3543)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 422.5ms | Allocations: 6975)
+Completed 200 OK in 429ms (Views: 423.3ms | ActiveRecord: 0.3ms | Allocations: 8613)
+
+
+Started GET "/stocks/1" for ::1 at 2021-04-02 23:40:07 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 259.8ms | Allocations: 2815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 268.7ms | Allocations: 6246)
+Completed 200 OK in 271ms (Views: 269.4ms | ActiveRecord: 0.2ms | Allocations: 7125)
+
+
+Started GET "/stocks" for ::1 at 2021-04-03 00:03:50 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/stocks/index.html.erb:7
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:7
+  Rendered stocks/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1184)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4614)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 5076)
+
+
+Started GET "/stocks" for ::1 at 2021-04-03 00:07:28 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/stocks/index.html.erb:7
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:7
+  Rendered stocks/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 5342)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 5411)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 7068)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    20: 
+    21: </div>
+    22: 
+    23: <h2 class="text-white">News about <%= @stock.name %><h2>
+    24: 
+    25: <% @all_articles = @newsapi.get_everything(q: "stock market" ,sources: 'bbc-news,the-verge',domains: 'bbc.co.uk,techcrunch.com',from: '2021-03-30',to: '2021-04-1',language: 'en',sortBy: 'relevancy', page: 1)%>
+    26: 
+  
+app/views/stocks/index.html.erb:23
+Started GET "/stocks" for ::1 at 2021-04-03 00:07:56 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:7
+  Rendered stocks/index.html.erb within layouts/application (Duration: 149.4ms | Allocations: 2555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 166.5ms | Allocations: 6231)
+Completed 200 OK in 171ms (Views: 168.9ms | ActiveRecord: 0.3ms | Allocations: 7474)
+
+
+Started GET "/stocks/1" for ::1 at 2021-04-03 00:08:36 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:29:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 342.6ms | Allocations: 3091)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 357.7ms | Allocations: 6757)
+Completed 200 OK in 365ms (Views: 361.5ms | ActiveRecord: 0.4ms | Allocations: 8576)
+
+
+Started GET "/stocks" for ::1 at 2021-04-03 00:08:39 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:7
+  Rendered stocks/index.html.erb within layouts/application (Duration: 72.9ms | Allocations: 2537)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 84.1ms | Allocations: 5969)
+Completed 200 OK in 86ms (Views: 84.6ms | ActiveRecord: 0.2ms | Allocations: 6578)
+
+
