@@ -68,9 +68,15 @@ GEM
     apple-news (0.5.1)
       activesupport
       multipart-post
+    autoprefixer-rails (10.2.4.0)
+      execjs
     bindex (0.8.1)
     bootsnap (1.7.3)
       msgpack (~> 1.0)
+    bootstrap (4.6.0)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.35.3)
@@ -86,6 +92,7 @@ GEM
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     erubi (1.10.0)
+    execjs (2.7.0)
     faraday (1.3.0)
       faraday-net_http (~> 1.0)
       multipart-post (>= 1.2, < 3)
@@ -143,6 +150,7 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.2-arm64-darwin)
       racc (~> 1.4)
+    popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (5.2.2)
       nio4r (~> 2.0)
@@ -252,6 +260,7 @@ DEPENDENCIES
   alphavantagerb
   apple-news
   bootsnap (>= 1.4.4)
+  bootstrap
   byebug
   capybara (>= 3.26)
   cicero
