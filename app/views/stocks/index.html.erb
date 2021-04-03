@@ -1,0 +1,21 @@
+<br>
+
+<%# <img src="final_project/app/views/stocks/Copy of Backround1024_1.webp"> %>
+
+<h2 class="text-white"> Current Watchlist </h2>
+
+<% @stocks.each do |stock| %>
+<div>
+<%= stock.name %>
+<%# <% current_stock = @client.stock symbol: stock.ticker %>
+<%# <% current_stock = Alphavantage::Stock.new symbol: stock.ticker, key: @key %>
+<%# <% stock_quote = current_stock.quote %>
+ $
+ <%# <%= stock_quote.price %>
+<%= link_to stock.name, stock_path(stock)%>
+
+</div>
+
+<% end %> 
+
+test

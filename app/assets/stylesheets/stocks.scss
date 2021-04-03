@@ -1,0 +1,56 @@
+// Place all the styles related to the stocks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+
+     background: rgb(70, 3, 70); 
+ }
+
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+div {
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin: 10px;
+    padding: 5px;
+
+    border-radius: 1%; 
+}
+
+// h1 {
+//     color: black;
+//     font-size: 48px;
+//     font-weight: bold;
+
+//     border-bottom: solid; 
+
+// }
+
+// a {
+//     color: orange;
+//     font-size: 24px;
+    
+// }
+
+.text-white {
+    color: white;
+}
+
+// .text-green {
+//     color: green;    
+// }
+
+// .background-red{
+//     background-color: red;
+// }

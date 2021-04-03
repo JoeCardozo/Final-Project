@@ -1,0 +1,35 @@
+<h2 class="text-white">Current Information on <%= @stock.ticker %><h2>
+
+<div>
+<%=@stock.name%>
+
+<% current_stock = @client.stock symbol: @stock.ticker %>
+<% current_stock = Alphavantage::Stock.new symbol: @stock.ticker, key: @alphavantagekey %>
+<% stock_quote = current_stock.quote %>
+$
+<%=stock_quote.price %>
+<%# <%=@stock.price %>
+<%= link_to "back", stocks_path%>
+
+</div>
+
+<h2 class="text-white">News about <%= @stock.name %><h2>
+
+<% @all_articles = @newsapi.get_everything(q: @stock.name ,sources: 'bbc-news,the-verge',domains: 'bbc.co.uk,techcrunch.com',from: '2021-03-30',to: '2021-04-1',language: 'en',sortBy: 'relevancy', page: 1)%>
+
+<div>
+<%= @all_articles.first.title %>
+<%= link_to "click here for more", @all_articles.first.url %>
+</div>
+<div>
+<%= @all_articles.second.title %>
+<%= link_to "click here for more", @all_articles.second.url %>
+</div>
+<div>
+<%= @all_articles.third.title %>
+<%= link_to "click here for more", @all_articles.third.url %>
+</div>
+<div>
+<%= @all_articles.fourth.title %>
+<%= link_to "click here for more", @all_articles.fourth.url %>
+</div>
