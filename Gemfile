@@ -14,6 +14,7 @@ gem "httparty"
 gem 'news-api'
 gem 'apple-news'
 gem 'bootstrap'
+gem "chartkick"
 
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server

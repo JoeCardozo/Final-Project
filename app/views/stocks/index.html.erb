@@ -1,6 +1,20 @@
+
 <br>
 
-<%# <img src="final_project/app/views/stocks/Copy of Backround1024_1.webp"> %>
+<style>
+body {
+  /* background-image: url('https://github.com/All-Aboard-Bootcamp/joecardozo-final/blob/db8cb54894a1b780e5b365debdbc31752898250a/Backround1024_2.jpg'); */
+
+  background-image: url('https://lh5.googleusercontent.com/2wJ56VBFQJbdqUzKyzbbqVL90cgRzBh5wHOShF69jzQkwA1euRQOHYljJ72dpXocfJaPXUk_rH3iGH-rtK4h2FtCpk_kT8gUqDDbgPK-k9y1av4C0GitarYLLGSDfBHlKQ=w1280');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* width: 1000px;
+  height: 1000px; */
+}
+</style>
+
+<%#<img src="https://lh4.googleusercontent.com/-HjQC1x0StSTDrB4XT7ZuEv4dpuWA7ctlAwoTIMgpN7RWY96-ep96V0ppey8sXWLX_D1soyCpZMddbZtVw2zfHxwGppIbVUrHNScqQ_YKyNcf3Maco9z_LEiBjNypNbnrw=w1280">%>
 
 <h2 class="text-white"> Current Watchlist </h2>
 
@@ -12,17 +26,23 @@
 <%# <% stock_quote = current_stock.quote %>
  $
  <%# <%= stock_quote.price %>
-<%= link_to stock.name, stock_path(stock)%>
+<%= link_to "Analysis on #{stock.name}", stock_path(stock)%>
+
+<%= button_to "delete", stock_path(stock), method: :delete %>
+<%# <%= link_to "delete", stock_path(stock), method: :delete %> 
 
 </div>
 
 <% end %> 
 
+<%= link_to "Add Company", new_stock_path %>
+<%# <%= button_to "Add Company", new_stock_path %>
+
 </div>
 
 <h2 class="text-white">Latest News<h2>
 
-<% @all_articles = @newsapi.get_everything(q: "stock market" ,sources: 'bbc-news,the-verge',domains: 'bbc.co.uk,techcrunch.com',from: '2021-03-30',to: '2021-04-1',language: 'en',sortBy: 'relevancy', page: 1)%>
+<% @all_articles = @newsapi.get_everything(q: "stock market" ,sources: 'bloomberg, bussiness-insider, the-wall-street-journal', domains: 'bloomberg.com,businessinsider.com, wsj.com',from: @priordate ,to: @currentdate,language: 'en',sortBy: 'relevancy', page: 1)%>
 
 <div>
 <%= @all_articles.first.title %>

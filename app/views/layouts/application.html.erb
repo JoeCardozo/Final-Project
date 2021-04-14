@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <h2 class="text-white"> Finance Geeks <h2>
+    <h2 class="text-white"> <%="session:#{@number}"%><h2>
+    <%= link_to "new user", new_user_path %>
+    Hello <%= current_user_name %>!
     <%= yield %>
   </body>
 </html>

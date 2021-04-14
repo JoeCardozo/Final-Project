@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   resources :stocks
 
+  resources :users
+
+  root :controller => "stocks", :action => "index"
 
 end

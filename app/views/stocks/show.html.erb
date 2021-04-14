@@ -1,4 +1,56 @@
-<h2 class="text-white">Current Information on <%= @stock.ticker %><h2>
+
+<head>
+<style>
+.item1 { grid-area: header; }
+/* .item2 { grid-area: menu; } */
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main right right'
+    'main main main main right right'
+    'footer footer footer footer footer footer';
+
+
+  grid-gap: 2px;
+  /* transperante color is rgba(100, 100, 100, 0.0), the last number is the amount out of 1 */
+  /* purple color rgb(70, 3, 70) */
+  background-color: rgba(100, 100, 100, 0.0);
+  padding: 2px;
+  border-color: rgba(100, 100, 100, 0.0);
+  
+}
+
+.grid-container > div {
+
+  background-color: rgba(100, 100, 100, 0.0);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 30px;
+  border-color: rgba(100, 100, 100, 0.0)
+
+}
+</style>
+</head>
+<body>
+
+
+<div class="grid-container">
+  <div class="item1">Header 
+  </div>
+
+  <%# <div class="item2">Menu</div> %>
+
+  <div class="item3">
+
+  <%# Main  %>
+  <%# removed .ticker from @stock %>
+  <h2 class="text-white">Current Information on <%= @stock.ticker %><h2>
+
 
 <div>
 <%=@stock.name%>
@@ -9,13 +61,23 @@
 $
 <%=stock_quote.price %>
 <%# <%=@stock.price %>
+<% indicator = Alphavantage::Indicator.new function: "SMA", symbol: @stock.ticker, key: @alphavantagekey %>
+<%= indicator.sma[0] %>
+<%= indicator.sma[1] %>
+
 <%= link_to "back", stocks_path%>
+
+<%# <%= line_chart indicator.sma.group_by(:value).count %> 
 
 </div>
 
+<%= link_to "edit", edit_stock_path(@stock) %>
+<%# <%= button_to "delete", stock_path, method: :delete %>
+<%# <%= link_to "deletet", stock_path %>
+
 <h2 class="text-white">News about <%= @stock.name %><h2>
 
-<% @all_articles = @newsapi.get_everything(q: @stock.name ,sources: 'bbc-news,the-verge',domains: 'bbc.co.uk,techcrunch.com',from: '2021-03-30',to: '2021-04-1',language: 'en',sortBy: 'relevancy', page: 1)%>
+<% @all_articles = @newsapi.get_everything(q: @stock.name ,sources: 'bloomberg, bussiness-insider, the-wall-street-journal',domains: 'bloomberg.com,businessinsider.com, wsj.com',from: @priordate ,to: @currentdate,language: 'en',sortBy: 'relevancy', page: 1)%>
 
 <div>
 <%= @all_articles.first.title %>
@@ -33,3 +95,29 @@ $
 <%= @all_articles.fourth.title %>
 <%= link_to "click here for more", @all_articles.fourth.url %>
 </div>
+
+  </div>  
+
+  <div class="item4">Right</div>
+
+  <div class="item5">Footer</div>
+
+</div>
+
+</body>
+
+
+
+
+
+<style>
+body {
+  /* background-image: url('https://github.com/All-Aboard-Bootcamp/joecardozo-final/blob/db8cb54894a1b780e5b365debdbc31752898250a/Backround1024_2.jpg?raw=true'); */
+  background-image: url('https://lh5.googleusercontent.com/2wJ56VBFQJbdqUzKyzbbqVL90cgRzBh5wHOShF69jzQkwA1euRQOHYljJ72dpXocfJaPXUk_rH3iGH-rtK4h2FtCpk_kT8gUqDDbgPK-k9y1av4C0GitarYLLGSDfBHlKQ=w1280');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* width: 1000px; */
+  /* height: 1000px; */
+}
+</style>
