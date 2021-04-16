@@ -62,11 +62,16 @@ $
 <%=stock_quote.price %>
 <%# <%=@stock.price %>
 <% indicator = Alphavantage::Indicator.new function: "SMA", symbol: @stock.ticker, key: @alphavantagekey %>
-<%= indicator.sma[0] %>
-<%= indicator.sma[1] %>
 
+<%= date_array = [indicator.sma[0][0], indicator.sma[1][0], indicator.sma[2][0]] %>
+<%= sma_array = [indicator.sma[0][1], indicator.sma[1][1], indicator.sma[2][1]] %>
+
+
+
+<%# <%= indicator.sma[0][1] %>
+
+<%# <%= link_to "back", stocks_path%>
 <%= link_to "back", stocks_path%>
-
 <%# <%= line_chart indicator.sma.group_by(:value).count %> 
 
 </div>
@@ -113,7 +118,7 @@ $
 <style>
 body {
   /* background-image: url('https://github.com/All-Aboard-Bootcamp/joecardozo-final/blob/db8cb54894a1b780e5b365debdbc31752898250a/Backround1024_2.jpg?raw=true'); */
-  background-image: url('https://lh5.googleusercontent.com/2wJ56VBFQJbdqUzKyzbbqVL90cgRzBh5wHOShF69jzQkwA1euRQOHYljJ72dpXocfJaPXUk_rH3iGH-rtK4h2FtCpk_kT8gUqDDbgPK-k9y1av4C0GitarYLLGSDfBHlKQ=w1280');
+  background-image: url('https://lh5.googleusercontent.com/1pLZjd59JJjGXxIo3ZiYLxuebo8xbaI7CUPdApJEWOyMgb-438RWtAqaW92Q56N3rQII-1FJ57CO2z_AShjhRkA-IOGz8ngHfcLliUOjTtDtJkxYTlpDUchcssksrQ6hLA=w1280');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

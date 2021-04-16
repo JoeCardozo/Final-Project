@@ -1,11 +1,12 @@
 
+
 <br>
 
 <style>
 body {
   /* background-image: url('https://github.com/All-Aboard-Bootcamp/joecardozo-final/blob/db8cb54894a1b780e5b365debdbc31752898250a/Backround1024_2.jpg'); */
 
-  background-image: url('https://lh5.googleusercontent.com/2wJ56VBFQJbdqUzKyzbbqVL90cgRzBh5wHOShF69jzQkwA1euRQOHYljJ72dpXocfJaPXUk_rH3iGH-rtK4h2FtCpk_kT8gUqDDbgPK-k9y1av4C0GitarYLLGSDfBHlKQ=w1280');
+  background-image: url('https://lh5.googleusercontent.com/1pLZjd59JJjGXxIo3ZiYLxuebo8xbaI7CUPdApJEWOyMgb-438RWtAqaW92Q56N3rQII-1FJ57CO2z_AShjhRkA-IOGz8ngHfcLliUOjTtDtJkxYTlpDUchcssksrQ6hLA=w1280');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -26,16 +27,19 @@ body {
 <%# <% stock_quote = current_stock.quote %>
  $
  <%# <%= stock_quote.price %>
-<%= link_to "Analysis on #{stock.name}", stock_path(stock)%>
 
-<%= button_to "delete", stock_path(stock), method: :delete %>
+<%# <%= link_to "Analysis on #{stock.name}", stock_path(stock)%> 
+
+<button class="button" style="vertical-align:middle" ><span> <%= link_to "Analysis on #{stock.name}", stock_path(stock)%> </span></button>
+
+<%# <%= button_to "Remove", stock_path(stock), method: :delete %>
 <%# <%= link_to "delete", stock_path(stock), method: :delete %> 
 
 </div>
 
 <% end %> 
 
-<%= link_to "Add Company", new_stock_path %>
+<%= button_to "Add Company", new_stock_path %>
 <%# <%= button_to "Add Company", new_stock_path %>
 
 </div>
@@ -60,3 +64,5 @@ body {
 <%= @all_articles.fourth.title %>
 <%= link_to "click here for more", @all_articles.fourth.url %>
 </div>
+
+

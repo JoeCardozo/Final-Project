@@ -102,6 +102,9 @@ GEM
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    googlecharts (1.6.12)
+    highstock-rails (5.0.11)
+      railties (>= 3.1)
     http_router (0.11.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -251,6 +254,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yahoofinance (1.2.2)
     ystock (0.4.14)
     zeitwerk (2.4.2)
 
@@ -266,6 +270,8 @@ DEPENDENCIES
   capybara (>= 3.26)
   chartkick
   cicero
+  googlecharts
+  highstock-rails
   httparty
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -283,6 +289,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
+  yahoofinance
   ystock
 
 RUBY VERSION

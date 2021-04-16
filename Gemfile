@@ -16,6 +16,10 @@ gem 'apple-news'
 gem 'bootstrap'
 gem "chartkick"
 
+gem 'googlecharts'
+gem 'yahoofinance'
+gem 'highstock-rails'
+
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
